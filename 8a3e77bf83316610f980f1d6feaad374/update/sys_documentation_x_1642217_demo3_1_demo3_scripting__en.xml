@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Demo3-Scripting" language="en" table="x_1642217_demo3_1_demo3_scripting">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Demo3-Scripting</label>
+            <language>en</language>
+            <name>x_1642217_demo3_1_demo3_scripting</name>
+            <plural>Demo3-Scriptings</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-06-05 06:52:59</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Demo3-Scripting</sys_name>
+            <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+            <sys_update_name>sys_documentation_x_1642217_demo3_1_demo3_scripting__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-06-05 06:52:59</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
