@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_1642217_demo3_1_demo3_open_dialog.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Confirm update to this record?</h4>
+                <p>This action will update the field value.</p>
+                <div id="loading" style="display:none;">
+                    <span class="loading-spinner spinner-xs"></span> processing...
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-12 text-right">
+                <button id="cancelButton" class="btn btn-default">Cancel</button>
+                <button id="okButton" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ 脚本直接放到 HTML 中 -->
+    <script>
+        console.log("sysparm_sys_id from Jelly0:", "${sysparm_sys_id} ${sysparm_target_table} ${sysparm_field}");
+
+        function updateField() {
+            var sysId = "${sysparm_sys_id}";
+            var tableName = "${sysparm_target_table}";
+            var fieldName = "${sysparm_field}";
+            var fieldValue = "${sysparm_field_value}";
+
+            // alert("变量值：" +
+            //     "\nSysID: " + sysId +
+            //     "\nField: " + fieldValue);
+
+            if (!sysId || !fieldValue) {
+                alert("Error: Missing required parameter");
+                return;
+            }
+
+            var loading = gel('loading');
+            if (loading) loading.style.display = 'block';
+
+            var ga = new GlideAjax('Demo3ToDoItemUpdate');
+            ga.addParam('sysparm_name', 'ajaxUpdateField');
+            ga.addParam('sysparm_sys_id', sysId);
+            ga.addParam('sysparm_field', fieldName);
+            ga.addParam('sysparm_table', tableName);
+            ga.addParam('sysparm_value', fieldValue);
+
+            ga.getXML(function(response) {
+                    if (loading) loading.style.display = 'none';
+                    try {
+                        var answer = response.responseXML.documentElement.getAttribute('answer');
+                        if (answer === 'update success') {
+                        // if (answer) {
+								// alert(answer);
+								alert('Field updated successfully!');
+								GlideDialogWindow.get().destroy();
+								window.parent.location.reload();
+                            } else {
+                                alert("Operation failed: " + (answer || "Unknown error"));
+                            }
+                        } catch (e) {
+                            console.error("Response parsing error:", e, response);
+                            alert("Error processing response");
+                        }
+                    });
+            }
+
+            addLoadEvent(function() {
+
+                var okButton = gel('okButton');
+                var cancelButton = gel('cancelButton');
+
+                if (okButton) {
+                    // ✅ 用匿名函数封装调用
+                    okButton.onclick = function() {
+                        updateField();
+                    };
+                } else {
+                    console.error("OK button not found");
+                }
+
+                if (cancelButton) {
+                    cancelButton.onclick = function() {
+                        GlideDialogWindow.get().destroy();
+                    };
+                } else {
+                    console.error("Cancel button not found");
+                }
+            });
+    </script>
+</j:jelly>]]></html>
+        <name>demo3_open_dialog</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 07:16:35</sys_created_on>
+        <sys_id>35a408c483426610f980f1d6feaad35a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>demo3_open_dialog</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+        <sys_update_name>sys_ui_page_35a408c483426610f980f1d6feaad35a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 07:21:17</sys_updated_on>
+    </sys_ui_page>
+</record_update>

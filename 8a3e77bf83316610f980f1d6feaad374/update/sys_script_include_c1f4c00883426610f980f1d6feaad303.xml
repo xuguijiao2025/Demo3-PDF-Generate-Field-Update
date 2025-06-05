@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1642217_demo3_1.Demo3ToDoItemUpdate</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Demo3ToDoItemUpdate</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Demo3ToDoItemUpdate = Class.create();
+Demo3ToDoItemUpdate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    ajaxUpdateField: function() {
+        try {
+            var sysId = this.getParameter('sysparm_sys_id');
+            var tableName = this.getParameter('sysparm_target_table');
+			var newValue = this.getParameter('sysparm_value');
+            if (!sysId || !newValue) {
+                this.setAttribute('answer', 'missing_parameters');
+                gs.error('[FieldUpdater] Missing parameter');
+                return;
+            }
+
+            // var gr = new GlideRecord(tableName);
+			var gr = new GlideRecord('x_1642217_demo3_1_demo3_scripting');
+            gr.addQuery('sys_id', sysId);
+            gr.query();
+
+            while (gr.next()) {
+                gr.to_do_item = newValue;
+                var updated = gr.update();
+
+                if (updated) {
+                    gs.info("999999999999:",updated);
+                    // this.setAttribute('answer','success');
+					return 'update success';
+                } else {
+                    // this.setAttribute('answer','update failed');
+					return 'update failed';
+                }
+            }
+
+        } catch (e) {
+            gs.error('[FieldUpdater] Exception: ' + e.message);
+            this.setAttribute('answer', 'error: ' + e.message);
+        }
+    },
+
+    type: 'Demo3ToDoItemUpdate'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 07:19:55</sys_created_on>
+        <sys_id>c1f4c00883426610f980f1d6feaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Demo3ToDoItemUpdate</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+        <sys_update_name>sys_script_include_c1f4c00883426610f980f1d6feaad303</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 07:19:55</sys_updated_on>
+    </sys_script_include>
+</record_update>
