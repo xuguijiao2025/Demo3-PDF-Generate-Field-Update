@@ -1,3 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="866f733383716610f980f1d6feaad3fc" label="Demo3-Scripting" max_length="40" name="x_1642217_demo3_1_demo3_scripting" type="collection"/>
+    <element db_object_id="866f733383716610f980f1d6feaad3fc" label="Demo3-Scripting" max_length="40" name="x_1642217_demo3_1_demo3_scripting" type="collection">
+        <element label="Importance" max_length="40" name="importance" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Importance" sequence="0" value="importance"/>
+                <element inactive_on_update="false" label="Not Important" sequence="2" value="not_important"/>
+                <element inactive_on_update="false" label="Very Importance" sequence="1" value="very_importance"/>
+            </choice>
+        </element>
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Send reminder" max_length="40" name="send_reminder" type="boolean"/>
+        <element label="Due date" max_length="255" name="due_date" type="glide_date"/>
+        <element label="Progress" max_length="40" name="progress" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="0" value="in_progress"/>
+                <element inactive_on_update="false" label="Done" sequence="2" value="done"/>
+                <element inactive_on_update="false" label="Canceled" sequence="3" value="canceled"/>
+                <element inactive_on_update="false" label="Not Started" sequence="1" value="not_started"/>
+            </choice>
+        </element>
+        <element label="To do item" max_length="150" name="to_do_item" type="string"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+    </element>
 </database>
