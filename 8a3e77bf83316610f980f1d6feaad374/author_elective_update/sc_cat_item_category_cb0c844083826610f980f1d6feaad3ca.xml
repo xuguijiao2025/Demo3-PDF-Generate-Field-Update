@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="Demo Request Item">6e0b4ccc83426610f980f1d6feaad318</sc_cat_item>
+        <sc_category display_value="Can We Help You?">e15706fc0a0a0aa7007fc21e1ab70c2f</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 07:48:12</sys_created_on>
+        <sys_id>cb0c844083826610f980f1d6feaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Can We Help You?.Demo Request Item</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+        <sys_update_name>sc_cat_item_category_cb0c844083826610f980f1d6feaad3ca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 07:48:12</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</application>
+        <file_path/>
+        <instance_id>755d98921bfef990fe1b43f4bd4bcbfd</instance_id>
+        <instance_name>dev230399</instance_name>
+        <name>sc_cat_item_category_cb0c844083826610f980f1d6feaad3ca</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="Demo Request Item">6e0b4ccc83426610f980f1d6feaad318</sc_cat_item><sc_category display_value="Can We Help You?">e15706fc0a0a0aa7007fc21e1ab70c2f</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-05 07:48:12</sys_created_on><sys_id>cb0c844083826610f980f1d6feaad3ca</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Can We Help You?.Demo Request Item</sys_name><sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package><sys_policy/><sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope><sys_update_name>sc_cat_item_category_cb0c844083826610f980f1d6feaad3ca</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-05 07:48:12</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>945422838</payload_hash>
+        <record_name>Can We Help You?.Demo Request Item</record_name>
+        <reverted_from/>
+        <source>bb0f7bff83316610f980f1d6feaad384</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 07:48:12</sys_created_on>
+        <sys_id>c30c844083826610f980f1d6feaad3cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1973f0fd7e40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 07:48:12</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>070c84400c82661021e3768ede51bcce</update_guid>
+        <update_guid_history>070c84400c82661021e3768ede51bcce:945422838</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Can We Help You?.Demo Request Item">4d1cc44083826610f980f1d6feaad3be</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 07:48:21</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>03fce03740c24e16befcc791441befc1</sys_id>
+        <sys_metadata>cb0c844083826610f980f1d6feaad3ca</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Can We Help You?.Demo Request Item</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+        <sys_scope_delete display_value="">61dda8d722b94fbab2a884f419592c44</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_cb0c844083826610f980f1d6feaad3ca</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_cb0c844083826610f980f1d6feaad3ca">c30c844083826610f980f1d6feaad3cf</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 07:48:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
