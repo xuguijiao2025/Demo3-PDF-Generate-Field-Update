@@ -7,7 +7,7 @@
 
 }]]></client_script_v2>
         <comments/>
-        <condition>gs.getUserID() == current.requested_for.toString() &amp;&amp; current.active == true &amp;&amp; current.variables.u_returned_to_requestor == true</condition>
+        <condition/>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -54,7 +54,7 @@ gs.addInfoMessage('Request resubmitted successfully.');
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7af258c883826610f980f1d6feaad3d1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Resubmit Request</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
@@ -62,8 +62,8 @@ gs.addInfoMessage('Request resubmitted successfully.');
         <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
         <sys_update_name>sys_ui_action_7af258c883826610f980f1d6feaad3d1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 08:19:36</sys_updated_on>
-        <table/>
+        <sys_updated_on>2025-06-06 01:15:25</sys_updated_on>
+        <table>sc_req_item</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>

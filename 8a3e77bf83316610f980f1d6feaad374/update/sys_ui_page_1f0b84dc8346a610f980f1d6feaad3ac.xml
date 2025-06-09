@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_1642217_demo3_1_get_reject_reason.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <div>
+        <textarea id="reject_reason" rows="4" cols="50"></textarea>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12 text-right">
+            <button id="cancelButton" class="btn btn-default">Cancel</button>
+            <button id="okButton" class="btn btn-primary">OK</button>
+        </div>
+    </div>
+    <script>
+        console.log("sysparm_sys_id from Jelly0:", "${sysparm_sys_id}");
+        addLoadEvent(function() {
+            var okButton = gel('okButton');
+            var cancelButton = gel('cancelButton');
+
+            if (okButton) {
+                // ✅ 用匿名函数封装调用
+                okButton.onclick = function() {
+                    returnToRequestor();
+                };
+            } else {
+                console.error("OK button not found");
+            }
+
+            if (cancelButton) {
+                cancelButton.onclick = function() {
+                    GlideDialogWindow.get().destroy();
+                };
+            } else {
+                console.error("Cancel button not found");
+            }
+        });
+
+        function returnToRequestor() {
+            var sys_id = "${sysparm_sys_id}";
+            var reason = document.getElementById("reject_reason").value.trim();
+
+            alert("变量值：" +
+                "\nSysID: " + sys_id +
+                "\nField: " + reason);
+            // 调用服务器端API
+            var ga = new GlideAjax('ReturnToRequestorUtils');
+            ga.addParam('sysparm_name', 'ajaxRejectRequest');
+            ga.addParam('sysparm_sys_id', sys_id);
+            ga.addParam('sysparm_reason', reason);
+
+            ga.getXML(function(response) {
+                try {
+                    var answer = response.responseXML.documentElement.getAttribute('answer');
+                    // console.log("sysparm_sys_id from 8888:", "${answer}");
+                    // if (answer === 'update success') {
+                    if (answer) {
+                        alert('Reject successfully!');
+                        GlideDialogWindow.get().destroy();
+                        window.parent.location.reload();
+                    } else {
+                        alert("Operation failed: " + (answer || "Unknown error"));
+                    }
+                } catch (e) {
+                    console.error("Response parsing error:", e, response);
+                    alert("Error processing response");
+                }
+            });
+        }
+        // }
+    </script>
+</j:jelly>]]></html>
+        <name>get_reject_reason</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-06 02:24:16</sys_created_on>
+        <sys_id>1f0b84dc8346a610f980f1d6feaad3ac</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>get_reject_reason</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
+        <sys_update_name>sys_ui_page_1f0b84dc8346a610f980f1d6feaad3ac</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-06 07:08:02</sys_updated_on>
+    </sys_ui_page>
+</record_update>

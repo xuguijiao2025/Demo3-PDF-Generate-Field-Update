@@ -6,7 +6,7 @@
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments/>
+        <comments>Reject the request</comments>
         <condition>current.state != '3' &amp;&amp; gs.hasRole('itil')</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
@@ -28,13 +28,54 @@
         <list_style/>
         <messages/>
         <name>Return to Requestor</name>
-        <onclick/>
+        <onclick>openReturnDialog() </onclick>
         <order>100</order>
-        <script><![CDATA[current.state = 3; // Assuming 3 = custom 'Returned'
-current.u_returned_to_requestor = true;
-current.comments = 'Returned to requestor for modification.';
-current.update();
-]]></script>
+        <script><![CDATA[// addLoadEvent(function() {
+//     "use strict";
+    
+    function openReturnDialog() {
+        try {
+            // 创建对话框实例
+            var dialog = new GlideDialogWindow("x_1642217_demo3_1_get_reject_reason");
+            
+            // 设置对话框属性
+            dialog.setTitle("退回原因说明");
+            dialog.setPreference("sysparm_sys_id", g_form.getUniqueValue());
+            dialog.setWidth(400);
+            
+            // 渲染对话框
+            dialog.render();
+        } catch (e) {
+            console.error('退回对话框错误:', e);
+            g_form.addErrorMessage('无法打开退回对话框: ' + e.message);
+        }
+    }
+    
+//     // 方法1：通过ID查找按钮
+//     var returnBtn = gel('return_to_requestor_btn');
+    
+//     // 方法2：通过CSS类查找
+//     if (!returnBtn) {
+//         var buttons = document.querySelectorAll('.form_action_button.header.btn.btn-default');
+//         buttons.forEach(function(btn) {
+//             if (btn.textContent.includes('Return to Requestor')) {
+//                 returnBtn = btn;
+//             }
+//         });
+//     }
+    
+//     // 方法3：通过数据属性（最佳实践）
+//     if (!returnBtn) {
+//         returnBtn = document.querySelector('[data-action="return_to_requestor"]');
+//     }
+    
+//     // 绑定事件
+//     if (returnBtn) {
+//         returnBtn.onclick = openReturnDialog;
+//     } else {
+//         console.warn('退回按钮未找到，请检查UI Action配置');
+//     }
+// });]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -45,7 +86,7 @@ current.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1c729c8883826610f980f1d6feaad34f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Return to Requestor</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
@@ -53,7 +94,7 @@ current.update();
         <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
         <sys_update_name>sys_ui_action_1c729c8883826610f980f1d6feaad34f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 08:17:32</sys_updated_on>
+        <sys_updated_on>2025-06-06 03:03:11</sys_updated_on>
         <table>sc_task</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
