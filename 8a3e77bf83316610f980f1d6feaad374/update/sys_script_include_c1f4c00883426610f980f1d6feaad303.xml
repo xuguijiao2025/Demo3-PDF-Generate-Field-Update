@@ -15,16 +15,14 @@ Demo3ToDoItemUpdate.prototype = Object.extendsObject(global.AbstractAjaxProcesso
     ajaxUpdateField: function() {
         try {
             var sysId = this.getParameter('sysparm_sys_id');
-            var tableName = this.getParameter('sysparm_target_table');
-			var newValue = this.getParameter('sysparm_value');
+            var newValue = this.getParameter('sysparm_value');
             if (!sysId || !newValue) {
                 this.setAttribute('answer', 'missing_parameters');
                 gs.error('[FieldUpdater] Missing parameter');
                 return;
             }
 
-            // var gr = new GlideRecord(tableName);
-			var gr = new GlideRecord('x_1642217_demo3_1_demo3_scripting');
+            var gr = new GlideRecord('x_1642217_demo3_1_demo3_scripting');
             gr.addQuery('sys_id', sysId);
             gr.query();
 
@@ -33,12 +31,10 @@ Demo3ToDoItemUpdate.prototype = Object.extendsObject(global.AbstractAjaxProcesso
                 var updated = gr.update();
 
                 if (updated) {
-                    gs.info("999999999999:",updated);
-                    // this.setAttribute('answer','success');
-					return 'update success';
+                    gs.info("999999999999:", updated);
+                    return 'update success';
                 } else {
-                    // this.setAttribute('answer','update failed');
-					return 'update failed';
+                    return 'update failed';
                 }
             }
 
@@ -54,13 +50,13 @@ Demo3ToDoItemUpdate.prototype = Object.extendsObject(global.AbstractAjaxProcesso
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-05 07:19:55</sys_created_on>
         <sys_id>c1f4c00883426610f980f1d6feaad303</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Demo3ToDoItemUpdate</sys_name>
         <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
         <sys_update_name>sys_script_include_c1f4c00883426610f980f1d6feaad303</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 07:19:55</sys_updated_on>
+        <sys_updated_on>2025-06-12 04:39:57</sys_updated_on>
     </sys_script_include>
 </record_update>

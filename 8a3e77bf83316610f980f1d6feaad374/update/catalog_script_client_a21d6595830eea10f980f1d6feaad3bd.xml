@@ -24,7 +24,7 @@
     }
 
     if (newValue) {
-        var ga = new GlideAjax('readEXCEL');
+        var ga = new GlideAjax('readEXCEL'); 
         ga.addParam('sysparm_name', 'getData');
         ga.addParam('sysparm_id', newValue); 
         ga.getXMLAnswer(function(response) {
@@ -36,44 +36,14 @@
             }
         });
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// function onChange(control, oldValue, newValue, isLoading) {
-//     if (isLoading || newValue == '') {
-//         return;
-//     }
-
-//     function ResponseFunction(response) {
-//         var results = JSON.parse(response);
-//         g_form.setValue('show_data', JSON.stringify(results));
-//     }
-//     if (newValue) {
-//         var ga = new GlideAjax('readEXCEL');
-//         ga.addParam('sysparm_name', 'getData');
-//         ga.addParam('sysparm_id', newValue);
-//         ga.getXMLAnswer(ResponseFunction);
-//     }
-//     //Type appropriate comment here, and begin script below
-
-// }]]></script>
+}]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-09 12:12:30</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a21d6595830eea10f980f1d6feaad3bd</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Set MRVS Data</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
@@ -81,7 +51,7 @@
         <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
         <sys_update_name>catalog_script_client_a21d6595830eea10f980f1d6feaad3bd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-09 14:14:21</sys_updated_on>
+        <sys_updated_on>2025-06-12 06:25:16</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

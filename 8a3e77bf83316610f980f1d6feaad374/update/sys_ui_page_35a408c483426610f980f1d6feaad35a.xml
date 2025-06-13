@@ -26,9 +26,8 @@
         </div>
     </div>
 
-    <!-- ✅ 脚本直接放到 HTML 中 -->
     <script>
-        console.log("sysparm_sys_id from Jelly0:", "${sysparm_sys_id} ${sysparm_target_table} ${sysparm_field}");
+        //console.log("sysparm_sys_id from Jelly0:", "${sysparm_sys_id} ${sysparm_target_table} ${sysparm_field}");
 
         function updateField() {
             var sysId = "${sysparm_sys_id}";
@@ -36,7 +35,7 @@
             var fieldName = "${sysparm_field}";
             var fieldValue = "${sysparm_field_value}";
 
-            // alert("变量值：" +
+            // alert("Variable value:" +
             //     "\nSysID: " + sysId +
             //     "\nField: " + fieldValue);
 
@@ -56,47 +55,45 @@
             ga.addParam('sysparm_value', fieldValue);
 
             ga.getXML(function(response) {
-                    if (loading) loading.style.display = 'none';
-                    try {
-                        var answer = response.responseXML.documentElement.getAttribute('answer');
-                        if (answer === 'update success') {
-                        // if (answer) {
-						// 		alert(answer);
-								alert('Field updated successfully!');
-								GlideDialogWindow.get().destroy();
-								window.parent.location.reload();
-                            } else {
-                                alert("Operation failed: " + (answer || "Unknown error"));
-                            }
-                        } catch (e) {
-                            console.error("Response parsing error:", e, response);
-                            alert("Error processing response");
-                        }
-                    });
-            }
-
-            addLoadEvent(function() {
-
-                var okButton = gel('okButton');
-                var cancelButton = gel('cancelButton');
-
-                if (okButton) {
-                    // ✅ 用匿名函数封装调用
-                    okButton.onclick = function() {
-                        updateField();
-                    };
-                } else {
-                    console.error("OK button not found");
-                }
-
-                if (cancelButton) {
-                    cancelButton.onclick = function() {
+                if (loading) loading.style.display = 'none';
+                try {
+                    var answer = response.responseXML.documentElement.getAttribute('answer');
+                    if (answer === 'update success') {
+                        alert('Field updated successfully!');
                         GlideDialogWindow.get().destroy();
-                    };
-                } else {
-                    console.error("Cancel button not found");
+                        window.parent.location.reload();
+                    } else {
+                        alert("Operation failed: " + (answer || "Unknown error"));
+                    }
+                } catch (e) {
+                    console.error("Response parsing error:", e, response);
+                    alert("Error processing response");
                 }
             });
+        }
+
+        addLoadEvent(function() {
+
+            var okButton = gel('okButton');
+            var cancelButton = gel('cancelButton');
+
+            if (okButton) {
+                // 用匿名函数封装调用
+                okButton.onclick = function() {
+                    updateField();
+                };
+            } else {
+                console.error("OK button not found");
+            }
+
+            if (cancelButton) {
+                cancelButton.onclick = function() {
+                    GlideDialogWindow.get().destroy();
+                };
+            } else {
+                console.error("Cancel button not found");
+            }
+        });
     </script>
 </j:jelly>]]></html>
         <name>demo3_open_dialog</name>
@@ -105,13 +102,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-05 07:16:35</sys_created_on>
         <sys_id>35a408c483426610f980f1d6feaad35a</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>demo3_open_dialog</sys_name>
         <sys_package display_value="Demo3-PDF Generate PDF &amp; Field Update" source="x_1642217_demo3_1">8a3e77bf83316610f980f1d6feaad374</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo3-PDF Generate PDF &amp; Field Update">8a3e77bf83316610f980f1d6feaad374</sys_scope>
         <sys_update_name>sys_ui_page_35a408c483426610f980f1d6feaad35a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-06 07:03:00</sys_updated_on>
+        <sys_updated_on>2025-06-12 02:22:42</sys_updated_on>
     </sys_ui_page>
 </record_update>
